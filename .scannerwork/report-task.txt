@@ -1,0 +1,7 @@
+organization=aharon02
+projectKey=dvna
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.22548
+dashboardUrl=https://sonarcloud.io/dashboard?id=dvna
+ceTaskId=AXs2_cWSGvNXCk0hKaD8
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AXs2_cWSGvNXCk0hKaD8
