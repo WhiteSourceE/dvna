@@ -7,6 +7,7 @@ var serialize = require('node-serialize');
 const Op = db.Sequelize.Op;
 
 const falseModule = reqire('./falseEval.js');
+const trueModule = require('./TrueEval');
 
 module.exports.userSearch = function (req, res) {
   var query = "SELECT name,id FROM Users WHERE login='" + req.body.login + "'";
@@ -207,7 +208,8 @@ module.exports.calc = function (req, res) {
   if (req.body.eqn) {
     res.render('app/calc', {
       // output: mathjs.eval(req.body.eqn)
-      output: falseModule.eval(req.body.eqn),
+      //   output: falseModule.eval(req.body.eqn),
+      output: trueModule.eval(req.body.eqn),
     });
   } else {
     res.render('app/calc', {
