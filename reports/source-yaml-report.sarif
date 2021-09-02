@@ -1,0 +1,209 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Security Audit for Infrastructure",
+          "rules": [
+            {
+              "id": "CKV_DOCKER_2",
+              "help": {
+                "text": "Ensure that HEALTHCHECK instructions have been added to container images .",
+                "markdown": "Ensure that HEALTHCHECK instructions have been added to container images ."
+              },
+              "name": "HealthcheckExists",
+              "properties": {
+                "tags": [
+                  "Scan"
+                ],
+                "precision": "high"
+              },
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "fullDescription": {
+                "text": "Ensure that HEALTHCHECK instructions have been added to container images ."
+              },
+              "helpUri": "https://slscan.io?q=CKV_DOCKER_2",
+              "shortDescription": {
+                "text": "Ensure that HEALTHCHECK instructions have been added to container images ."
+              }
+            },
+            {
+              "id": "CKV_DOCKER_3",
+              "help": {
+                "text": "Ensure that a user for the container has been created.",
+                "markdown": "Ensure that a user for the container has been created."
+              },
+              "name": "UserExists",
+              "properties": {
+                "tags": [
+                  "Scan"
+                ],
+                "precision": "high"
+              },
+              "defaultConfiguration": {
+                "level": "note"
+              },
+              "fullDescription": {
+                "text": "Ensure that a user for the container has been created."
+              },
+              "helpUri": "https://slscan.io?q=CKV_DOCKER_3",
+              "shortDescription": {
+                "text": "Ensure that a user for the container has been created."
+              }
+            }
+          ],
+          "version": "1.0.0-scan",
+          "fullName": "Security Audit for Infrastructure"
+        }
+      },
+      "conversion": {
+        "tool": {
+          "driver": {
+            "name": "@ShiftLeft/sast-scan"
+          }
+        },
+        "invocation": {
+          "arguments": [
+            "-s",
+            "--quiet",
+            "--no-guide",
+            "-o",
+            "json",
+            "-d",
+            "/app"
+          ],
+          "executionSuccessful": true,
+          "commandLine": "-s --quiet --no-guide -o json -d /app",
+          "endTimeUtc": "2021-08-27T13:23:49Z",
+          "workingDirectory": {
+            "uri": "file:///home/denis-py/Desktop/WHITESOURCE/js-projects/dvna"
+          }
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "endTimeUtc": "2021-08-27T13:23:49Z",
+          "workingDirectory": {
+            "uri": "file:///home/denis-py/Desktop/WHITESOURCE/js-projects/dvna"
+          }
+        }
+      ],
+      "properties": {
+        "metrics": {
+          "total": 2,
+          "critical": 0,
+          "high": 0,
+          "medium": 1,
+          "low": 1
+        }
+      },
+      "results": [
+        {
+          "message": {
+            "markdown": "",
+            "text": "Ensure that HEALTHCHECK instructions have been added to container images ."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "snippet": {
+                    "text": "0 # Damn Vulnerable NodeJS Application\n"
+                  },
+                  "startLine": 1
+                },
+                "artifactLocation": {
+                  "uri": "file:///home/denis-py/Desktop/WHITESOURCE/js-projects/dvna/Dockerfile"
+                },
+                "contextRegion": {
+                  "snippet": {
+                    "text": "0 # Damn Vulnerable NodeJS Application\n"
+                  },
+                  "endLine": 1,
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_confidence": "HIGH",
+            "issue_severity": "MEDIUM",
+            "issue_tags": {}
+          },
+          "baselineState": "new",
+          "partialFingerprints": {
+            "scanPrimaryLocationHash": "5d59f1f1eb7388d2",
+            "scanFileHash": "78975141eff037cd"
+          },
+          "ruleId": "CKV_DOCKER_2",
+          "ruleIndex": 0
+        },
+        {
+          "message": {
+            "markdown": "",
+            "text": "Ensure that a user for the container has been created."
+          },
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "region": {
+                  "snippet": {
+                    "text": "0 # Damn Vulnerable NodeJS Application\n"
+                  },
+                  "startLine": 1
+                },
+                "artifactLocation": {
+                  "uri": "file:///home/denis-py/Desktop/WHITESOURCE/js-projects/dvna/Dockerfile"
+                },
+                "contextRegion": {
+                  "snippet": {
+                    "text": "0 # Damn Vulnerable NodeJS Application\n"
+                  },
+                  "endLine": 1,
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "properties": {
+            "issue_confidence": "HIGH",
+            "issue_severity": "LOW",
+            "issue_tags": {}
+          },
+          "baselineState": "new",
+          "partialFingerprints": {
+            "scanPrimaryLocationHash": "5d59f1f1eb7388d2",
+            "scanFileHash": "78975141eff037cd"
+          },
+          "ruleId": "CKV_DOCKER_3",
+          "ruleIndex": 1
+        }
+      ],
+      "automationDetails": {
+        "description": {
+          "text": "Static Analysis Security Test results using @ShiftLeft/sast-scan"
+        },
+        "guid": "aeba569e-accc-4dd5-8b3e-6c598a4c7197"
+      },
+      "versionControlProvenance": [
+        {
+          "branch": "master",
+          "repositoryUri": "https://github.com/WhiteSourceE/dvna",
+          "revisionId": "c85d0c4c9aa436fd5ca318084d610145f2070cd3"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "inlineExternalProperties": [
+    {
+      "guid": "aeba569e-accc-4dd5-8b3e-6c598a4c7197",
+      "runGuid": "dec518ec-b030-4d61-9286-5760e495930f"
+    }
+  ]
+}

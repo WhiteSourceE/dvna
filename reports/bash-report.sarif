@@ -1,0 +1,81 @@
+{
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Shell Script Analysis",
+          "version": "1.0.0-scan",
+          "fullName": "Shell Script Analysis"
+        }
+      },
+      "conversion": {
+        "tool": {
+          "driver": {
+            "name": "@ShiftLeft/sast-scan"
+          }
+        },
+        "invocation": {
+          "arguments": [
+            "-a",
+            "--shell=bash",
+            "-f",
+            "json",
+            "-S",
+            "error",
+            "--color=never",
+            "/app/entrypoint.sh",
+            "/app/startup.sh",
+            "/app/entrypoint-dev.sh",
+            "/app/wait-for-it.sh"
+          ],
+          "executionSuccessful": true,
+          "commandLine": "-a --shell=bash -f json -S error --color=never /app/entrypoint.sh /app/startup.sh /app/entrypoint-dev.sh /app/wait-for-it.sh",
+          "endTimeUtc": "2021-08-27T13:23:47Z",
+          "workingDirectory": {
+            "uri": "file:///home/denis-py/Desktop/WHITESOURCE/js-projects/dvna"
+          }
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true,
+          "endTimeUtc": "2021-08-27T13:23:47Z",
+          "workingDirectory": {
+            "uri": "file:///home/denis-py/Desktop/WHITESOURCE/js-projects/dvna"
+          }
+        }
+      ],
+      "properties": {
+        "metrics": {
+          "total": 0,
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 0
+        }
+      },
+      "results": [],
+      "automationDetails": {
+        "description": {
+          "text": "Static Analysis Security Test results using @ShiftLeft/sast-scan"
+        },
+        "guid": "e16f0ff8-91aa-4e3f-97cf-ed3736445c92"
+      },
+      "versionControlProvenance": [
+        {
+          "branch": "master",
+          "repositoryUri": "https://github.com/WhiteSourceE/dvna",
+          "revisionId": "c85d0c4c9aa436fd5ca318084d610145f2070cd3"
+        }
+      ]
+    }
+  ],
+  "version": "2.1.0",
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "inlineExternalProperties": [
+    {
+      "guid": "e16f0ff8-91aa-4e3f-97cf-ed3736445c92",
+      "runGuid": "dec518ec-b030-4d61-9286-5760e495930f"
+    }
+  ]
+}
